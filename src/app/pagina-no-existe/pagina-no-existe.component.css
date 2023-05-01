@@ -1,0 +1,20 @@
+h1 {
+    font-family: 'Playfair Display', serif;
+}
+
+h4 {
+    font-family: 'Playfair Display', serif;
+}
+
+.badge {
+    background-color: #ff86a0;
+    font-size: 24px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: white !important;
+}
