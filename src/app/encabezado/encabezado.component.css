@@ -1,15 +1,3 @@
-.beauty {
-    background: linear-gradient(45deg, #fdb2c2, #e5b2fd, #b2fdda, #f8fdb2 );
-    background-size: 400% 400%;
-    animation: change 5s ease infinite;
-}
-
-@keyframes change {
-    0%{background-position: 0 50%;}
-    50%{background-position: 100% 50%;}
-    100%{background-position: 0 50%;}
-}
-
 .bi-person-hearts {
     font-size: 25px;
     color:rgb(70, 70, 70)
@@ -41,7 +29,9 @@ h1 {
 }
 
 .menu {
-    background-color: #FF3D67;
+    background: linear-gradient(45deg, #e73a06, #FF3D67, #3667cf, #23d541);
+    background-size: 400% 400%;
+    animation: gradient 12s ease-in infinite;
 }
 
 .dropdown-item {
@@ -50,4 +40,16 @@ h1 {
 
 .dropdown-item:active {
     background-color: #ff839e !important;
+}
+
+@keyframes gradient{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
 }
