@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormRegistroComponent } from './form-registro/form-registro.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { PaginaNoExisteComponent } from './pagina-no-existe/pagina-no-existe.component';
+import { ClientesModule } from "./clientes/clientes.module";
 
 const routes: Routes = [
   { path: 'cuerpo', component: CuerpoComponent },
@@ -24,24 +25,26 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    EncabezadoComponent,
-    PieComponent,
-    CuerpoComponent,
-    FormRegistroComponent,
-    InicioComponent,
-    PaginaNoExisteComponent
-  ],
-  imports: [
-    BrowserModule,
-    ToastrModule.forRoot(),
-    BrowserAnimationsModule,
-    RouterModule.forRoot(routes),
-    FormsModule,
-    ReactiveFormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        EncabezadoComponent,
+        PieComponent,
+        CuerpoComponent,
+        FormRegistroComponent,
+        InicioComponent,
+        PaginaNoExisteComponent
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        ToastrModule.forRoot(),
+        BrowserAnimationsModule,
+        RouterModule.forRoot(routes),
+        FormsModule,
+        ReactiveFormsModule,
+        ClientesModule
+    ],
+    schemas:[ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }
