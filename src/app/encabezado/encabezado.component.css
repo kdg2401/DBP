@@ -1,3 +1,15 @@
+.beauty {
+    background: linear-gradient(45deg, #fdb2c2, #e5b2fd, #b2fdda, #f8fdb2 );
+    background-size: 400% 400%;
+    animation: change 5s ease infinite;
+}
+
+@keyframes change {
+    0%{background-position: 0 50%;}
+    50%{background-position: 100% 50%;}
+    100%{background-position: 0 50%;}
+}
+
 .bi-person-hearts {
     font-size: 25px;
     color:rgb(70, 70, 70)

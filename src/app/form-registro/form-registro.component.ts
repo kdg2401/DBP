@@ -12,7 +12,10 @@ export class FormRegistroComponent implements OnInit {
 
   public formSignUp: FormGroup;
 
-  show: false;
+  showErrorUser: Boolean = true;
+  showErrorEmail: Boolean = true;
+  showErrorPassword: Boolean = true;
+  showErrorTerms: Boolean = true;
  
   constructor(private formBuilder: FormBuilder){
 

@@ -1,44 +1,60 @@
-<div class="mt-5">
-    <form [formGroup]="formSignUp" (submit)="submit()">
-
+<div class="mt-5 ms-auto my-1 position-relative d-flex">
+    <form class="align-items-center px-5" [formGroup]="formSignUp" (submit)="submit()">
         <!--USERNAME-->
         <div class="mb-3">
             <label for="InputUser" class="form-label">Username</label>
             <div class="input-group">
               <span class="input-group-text" id="inputGroupPrepend">@</span>
-              <input type="text" class="form-control" formControlName="username" name="username" id="InputUser">
+              <input type="text" class="form-control" formControlName="username" name="username" id="InputUser" (keyup)="showErrorUser=false">
             </div>
-            <span class="text-danger" *ngIf="this.formSignUp.get('username')?.errors?.['required']">*Escribe un nombre de usuario</span>
-            <span class="text-danger" *ngIf="this.formSignUp.get('username')?.errors?.['minlength']">*El nombre de usuario debe tener mínimo 4 caracteres</span>
-            <span class="text-danger" *ngIf="this.formSignUp.get('username')?.errors?.['maxlength']">*El nombre de usuario debe tener máximo 10 caracteres</span>
+            <div *ngIf="showErrorUser; else: showErrorUserM">
+            </div>
+            <ng-template #showErrorUserM>
+              <span class="text-danger" *ngIf="this.formSignUp.get('username')?.errors?.['required']">*Escribe un nombre de usuario</span>
+              <span class="text-danger" *ngIf="this.formSignUp.get('username')?.errors?.['minlength']">*El nombre de usuario debe tener mínimo 4 caracteres</span>
+              <span class="text-danger" *ngIf="this.formSignUp.get('username')?.errors?.['maxlength']">*El nombre de usuario debe tener máximo 10 caracteres</span>
+            </ng-template>  
         </div>
 
         <!--EMAIL-->
         <div class="mb-3">
           <label for="InputEmail1" class="form-label">Email</label>
-          <input type="email" class="form-control" formControlName="email" name="email" id="InputEmail1">     
+          <input type="email" class="form-control" formControlName="email" name="email" id="InputEmail1" (keyup)="showErrorEmail=false">     
           <div id="emailHelp" class="form-text">No compartiremos tu email con nadie más.</div>
-          <span class="text-danger" *ngIf="this.formSignUp.get('email')?.errors?.['required']">*Escribe un email</span>
-          <span class="text-danger" *ngIf="this.formSignUp.get('email')?.errors?.['email']">*Escribe un email valido</span>
+          <div *ngIf="showErrorEmail; else: showErrorEmailM">
+          </div>
+          <ng-template #showErrorEmailM>
+            <span class="text-danger" *ngIf="this.formSignUp.get('email')?.errors?.['required']">*Escribe un email</span>
+            <span class="text-danger" *ngIf="this.formSignUp.get('email')?.errors?.['email']">*Escribe un email valido</span>
+          </ng-template>
         </div>
 
         <!--CONTRASEÑA-->
         <div class="mb-3">
           <label for="InputPassword1" class="form-label">Contraseña</label>
-          <input type="password" class="form-control" formControlName="password" name="password" id="InputPassword1">
-          <span class="text-danger" *ngIf="this.formSignUp.get('password')?.errors?.['required']">*Escribe una contraseña</span>
-          <span class="text-danger" *ngIf="this.formSignUp.get('password')?.errors?.['minlength']">*La contraseña debe tener mínimo 4 caracteres</span>
-          <span class="text-danger" *ngIf="this.formSignUp.get('password')?.errors?.['minlength']">*La contraseña debe tener máximo 8 caracteres</span>
+          <input type="password" class="form-control" formControlName="password" name="password" id="InputPassword1" (keyup)="showErrorPassword=false">
+          <div *ngIf="showErrorPassword; else: showErrorPasswordM">
+          </div>
+          <ng-template #showErrorPasswordM>
+            <span class="text-danger" *ngIf="this.formSignUp.get('password')?.errors?.['required']">*Escribe una contraseña</span>
+            <span class="text-danger" *ngIf="this.formSignUp.get('password')?.errors?.['minlength']">*La contraseña debe tener mínimo 4 caracteres</span>
+            <span class="text-danger" *ngIf="this.formSignUp.get('password')?.errors?.['maxlength']">*La contraseña debe tener máximo 8 caracteres</span>
+          </ng-template>
         </div>
 
         <!--TERMINOS Y CONDICIONES-->
         <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="terms" formControlName="terms">
+          <input type="checkbox" class="form-check-input" id="terms" formControlName="terms" (mouseup)="showErrorTerms=false">
           <div class="form-check-label" for="terms">He leído y acepto los Terminos y condiciones y Politica de privacidad
           </div>
-          <span class="text-danger" *ngIf="this.formSignUp.get('terms')?.errors?.['required']">*Debes aceptar los terminos y condiciones</span>   
+          <div *ngIf="showErrorTerms; else: showErrorTermsM">
+          </div>
+          <ng-template #showErrorTermsM>
+            <span class="text-danger" *ngIf="this.formSignUp.get('terms')?.errors?.['required']">*Debes aceptar los terminos y condiciones</span>
+          </ng-template>   
         </div>       
-        <button id="btnSubmit" type="submit" class="btn btn-primary" [disabled]="formSignUp
+        <button id="btnSubmit" type="submit" class="btn-send btn" [disabled]="formSignUp
         .invalid">Enviar</button>
     </form>
+    <img src="assets/img/1.png" class="img-fluid ml-auto p-2" alt="..." width="500" height="500">
 </div>

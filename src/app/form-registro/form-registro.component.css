@@ -1,0 +1,14 @@
+.btn-send {
+    background-color: #ffc9d5;
+    color: black;
+}
+
+.form-check-input:checked {
+    background-color: black;
+    color: #ffc9d5;
+}
+
+.input-group-text {
+    background-color: #ffc9d5;
+    color: black;
+}
