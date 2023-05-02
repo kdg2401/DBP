@@ -17,3 +17,6 @@
         <option *ngFor="let grupo of grupos" value="{{ grupo.id }}">{{ grupo.nombre }}</option>
     </select>
 </p>
+<p>
+    <button (click)="this.nuevoCliente()">Guardar</button>
+</p>
