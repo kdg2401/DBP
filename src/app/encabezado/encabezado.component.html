@@ -1,5 +1,5 @@
 <header class="py-2 mb-1 border-bottom">
-  <div class="beauty position-relative mb-3 py-2 text-center font-weight-bolder">
+  <div class="border border-secondary position-relative mb-3 py-2 text-center font-weight-bolder">
     ENVIO GRATIS A NIVEL NACIONAL POR COMPRAS MAYORES A $60.000
   </div>
   <div class="container d-flex flex-row justify-content-around">
@@ -10,9 +10,12 @@
       <svg class="bi me-2" width="20" height="32"><use xlink:href="#bootstrap"/></svg>
       <h1 class="fs-4" id="title-page">BeautyPink</h1>
     </a>
+    <div class="d-flex ms-auto my-1 position-relative">
+      <span [ngClass]="{busquedasComunes: busqueda == 'labial' || busqueda == 'corrector'}">{{busqueda}}</span>
+    </div>
     <div class="d-flex ms-auto my-1 position-relative" role="search">
       <i class="bi bi-search-heart position-absolute ms-3 mt-3"></i>
-      <input type="search" class="ps-5 form-control rounded-pill" placeholder="¿Qué estás buscando?" aria-label="Search" id="search-item">
+      <input type="search" class="ps-5 form-control rounded-pill" placeholder="¿Qué estás buscando?" aria-label="Search" id="search-item" [(ngModel)]="busqueda">
     </div>
     <ul class="nav">
       <li class="nav-item" routerLinkActive="active">
@@ -21,8 +24,9 @@
         </a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a href="#" [routerLink]="['/cuerpo']" class="nav-link link-dark mt-2 ms-2 px-6">
-          <i class="bi bi-bag-heart-fill"></i>
+        <a href="#" [routerLink]="['/cuerpo']" class="nav-link link-dark ms-2 d-flex flex-row">
+          <i class="bi bi-bag-heart-fill mt-1"></i>
+          <p class="car p-1at mt-2">{{numeroCompras}}</p>
         </a>
       </li>
     </ul>
@@ -34,73 +38,65 @@
       <li class="nav-item2 dropdown" routerLinkActive="active">
         <a class="nav-link  link-light dropdown-toggle" [routerLink]="['/alta-cliente']" data-bs-toggle="dropdown" aria-expanded="false">CUIDADO PERSONAL</a>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <li><a class="dropdown-item" href="#">CUIDADO CAPILAR</a></li>
+          <li><a class="dropdown-item" href="#">CUIDADO FACIAL</a></li>
+          <li><a class="dropdown-item" href="#">CUIDADO CORPORAL</a></li>
         </ul>
       </li>
       <li class="nav-item2 dropdown">
         <a class="nav-link  link-light dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">CUIDADO DE PIEL</a>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <li><a class="dropdown-item" href="#">CORPORAL</a></li>
+          <li><a class="dropdown-item" href="#">FACIAL</a></li>
+          <li><a class="dropdown-item" href="#">ACCESORIOS</a></li>
         </ul>
       </li>
       <li class="nav-item2 dropdown">
         <a class="nav-link  link-light dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">CAPILAR</a>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <li><a class="dropdown-item" href="#">SHAMPOO</a></li>
+          <li><a class="dropdown-item" href="#">ACONDICIONADOR</a></li>
+          <li><a class="dropdown-item" href="#">TRATAMIENTOS</a></li>
         </ul>
       </li>
       <li class="nav-item2 dropdown">
         <a class="nav-link  link-light dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">ELÉCTRICOS</a>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <li><a class="dropdown-item" href="#">PLANCHAS</a></li>
+          <li><a class="dropdown-item" href="#">CEPILLOS</a></li>
+          <li><a class="dropdown-item" href="#">RIZADORES</a></li>
         </ul>
       </li>
       <li class="nav-item2 dropdown">
         <a class="nav-link  link-light dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">MAQUILLAJE</a>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <li><a class="dropdown-item" href="#">OJOS</a></li>
+          <li><a class="dropdown-item" href="#">CARA</a></li>
+          <li><a class="dropdown-item" href="#">LABIOS</a></li>
         </ul>
       </li>
       <li class="nav-item2 dropdown">
         <a class="nav-link  link-light dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">ACCESORIOS</a>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <li><a class="dropdown-item" href="#">UÑAS</a></li>
         </ul>
       </li>
       <li class="nav-item2 dropdown">
         <a class="nav-link  link-light dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">FRAGANCIAS</a>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <li><a class="dropdown-item" href="#">HOMBRE</a></li>
+          <li><a class="dropdown-item" href="#">MUJER</a></li>
         </ul>
       </li>
-      <li class="nav-item2 dropdown">
-        <a class="nav-link  link-light dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">NUEVOS</a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
+      <li class="nav-item2" routerLinkActive="active">
+        <a class="nav-link  link-light " [routerLink]="['/maquillaje-rostro']" data-bs-toggle="dropdown" aria-expanded="false">NUEVOS</a>
       </li>
       <li class="nav-item2 dropdown">
         <a class="nav-link  link-light dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">MARCAS</a>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <li><a class="dropdown-item" href="#">ISDIN</a></li>
+          <li><a class="dropdown-item" href="#">ESSENCE</a></li>
+          <li><a class="dropdown-item" href="#">VOGUE</a></li>
         </ul>
       </li>
     </ul>

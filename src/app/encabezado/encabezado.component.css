@@ -1,13 +1,11 @@
-
-
 .bi-person-hearts {
     font-size: 25px;
-    color:rgb(70, 70, 70)
+    color:rgb(0, 0, 0)
 }
 
 .bi-bag-heart-fill {
     font-size: 25px;
-    color:rgb(70, 70, 70)
+    color:rgb(0, 0, 0)
 }
 
 .bi-search-heart {
@@ -55,4 +53,18 @@ h1 {
     100%{
         background-position: 0% 50%;
     }
+}
+
+.car {
+    border-radius: 50%;
+    background-color: #FF3D67;
+}
+
+.busquedasComunes {
+    color: #FF3D67;
+    font-weight: bold;
+    text-decoration: dotted;
+}
+
+.beauty {
 }

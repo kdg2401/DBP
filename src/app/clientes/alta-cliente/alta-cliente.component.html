@@ -1,19 +1,19 @@
-<h2>Alta cliente</h2>
+<h2>Productos</h2>
 <p>
     <span>Nombre:</span>
-    <input type="text" [(ngModel)]="cliente.nombre">
+    <input type="text" [(ngModel)]="producto.nombre">
 </p>
 <p>
-    <span>CIF:</span>
-    <input type="text" [(ngModel)]="cliente.cif">
+    <span>Marca:</span>
+    <input type="text" [(ngModel)]="producto.marca">
 </p>
 <p>
-    <span>Direccion:</span>
-    <input type="text" [(ngModel)]="cliente.direccion">
+    <span>Código:</span>
+    <input type="text" [(ngModel)]="producto.codigo">
 </p>
 <p>
-    <span>Grupo:</span>
-    <select name="" id="" [(ngModel)]="cliente.grupo">
+    <span>Categoria:</span>
+    <select name="" id="" [(ngModel)]="producto.categoria">
         <option *ngFor="let grupo of grupos" value="{{ grupo.id }}">{{ grupo.nombre }}</option>
     </select>
 </p>

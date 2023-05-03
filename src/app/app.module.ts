@@ -14,11 +14,13 @@ import { FormRegistroComponent } from './form-registro/form-registro.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { PaginaNoExisteComponent } from './pagina-no-existe/pagina-no-existe.component';
 import { ClientesModule } from "./clientes/clientes.module";
+import { MaquillajeRostroComponent } from './maquillaje-rostro/maquillaje-rostro.component';
 
 const routes: Routes = [
   { path: 'cuerpo', component: CuerpoComponent },
   { path: 'form-registro', component: FormRegistroComponent },
   { path: 'inicio', component: InicioComponent},
+  { path: 'maquillaje-rostro', component: MaquillajeRostroComponent},
   { path: 'pagina-no-existe', component: PaginaNoExisteComponent},
   { path: '', component: InicioComponent, pathMatch: 'full' },
   { path: '**', component: PaginaNoExisteComponent, pathMatch: 'full' }
@@ -32,7 +34,8 @@ const routes: Routes = [
         CuerpoComponent,
         FormRegistroComponent,
         InicioComponent,
-        PaginaNoExisteComponent
+        PaginaNoExisteComponent,
+        MaquillajeRostroComponent
     ],
     providers: [],
     bootstrap: [AppComponent],

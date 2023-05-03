@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-encabezado',
@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class EncabezadoComponent {
 
+  @Input() NCompras:Number;
+
+  numeroCompras:any = 0
+
+  busqueda:String = "";
+
+    agregarArticuloCarro(){
+      this.numeroCompras = this.numeroCompras + 1;
+    }
 }

@@ -1,9 +1,9 @@
-export interface Cliente{
+export interface Producto{
     id: number;
     nombre: string;
-    cif: string;
-    direccion: string;
-    grupo: number;
+    marca: string;
+    codigo: string;
+    categoria: number;
     }
     
   export interface Grupo{
