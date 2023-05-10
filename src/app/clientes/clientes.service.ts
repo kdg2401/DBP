@@ -1,28 +1,28 @@
 import { Injectable } from '@angular/core';
-import {Producto, Grupo} from './cliente.model'
+import {Cliente, Grupo} from './cliente.model'
 
 @Injectable()
 export class ClientesService{
-  private clientes: Producto[];
+  private clientes: Cliente[];
   private grupos: Grupo[];
 
   constructor(){
     this.grupos = [
       {
-        id: 0,
-        nombre: 'Sin definir'
+        id: 0.05,
+        nombre: '5%'
       },
       {
-        id: 1,
-        nombre: 'Activos'
+        id: 0.10,
+        nombre: '10%'
       },
       {
-        id: 2,
-        nombre: 'Inactivos'
+        id: 0.15,
+        nombre: '15%'
       },
       {
-        id:3,
-        nombre: 'Deudores'
+        id: 0.25,
+        nombre: '25%'
       },
     ];
     this.clientes = []
@@ -33,16 +33,16 @@ export class ClientesService{
   getClientes(){
     return this.clientes;
   }
-  agregarCliente(cliente: Producto){
+  agregarCliente(cliente: Cliente){
     this.clientes.push(cliente);
   }
-  nuevoCliente(): Producto{
+  nuevoCliente(): Cliente{
     return{
       id: this.clientes.length,
       nombre: '',
-      marca: '',
-      codigo: '',
-      categoria: 0
+      cif: '',
+      direccion: 1,
+      grupo: 0.05
     };
   }
 }
