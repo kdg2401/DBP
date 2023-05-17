@@ -1,5 +1,5 @@
 import { ClientesService } from '../clientes.service';
-import { Producto, Grupo} from './../cliente.model'
+import { Cliente, Grupo} from './../cliente.model'
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,16 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./alta-cliente.component.css']
 })
 export class AltaClienteComponent implements OnInit{
-  producto: Producto;
+  cliente: Cliente;
   grupos: Grupo[];
 
   constructor(private clientesService: ClientesService){  }
   ngOnInit(){
-    this.producto = this.clientesService.nuevoCliente();
+    this.cliente = this.clientesService.nuevoCliente();
     this.grupos = this.clientesService.getGrupos();
   }
   nuevoCliente(): void{
-    this.clientesService.agregarCliente(this.producto);
-    this.producto = this.clientesService.nuevoCliente();
+    this.clientesService.agregarCliente(this.cliente);
+    this.cliente = this.clientesService.nuevoCliente();
   }
 }

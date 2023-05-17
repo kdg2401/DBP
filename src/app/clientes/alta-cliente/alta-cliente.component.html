@@ -1,23 +1,30 @@
-<h2>Productos</h2>
-<p>
-    <span>Nombre:</span>
-    <input type="text" [(ngModel)]="producto.nombre">
-</p>
-<p>
-    <span>Marca:</span>
-    <input type="text" [(ngModel)]="producto.marca">
-</p>
-<p>
-    <span>Código:</span>
-    <input type="text" [(ngModel)]="producto.codigo">
-</p>
-<p>
-    <span>Categoria:</span>
-    <select name="" id="" [(ngModel)]="producto.categoria">
-        <option *ngFor="let grupo of grupos" value="{{ grupo.id }}">{{ grupo.nombre }}</option>
-    </select>
-</p>
-<p>
-    <button (click)="this.nuevoCliente()">Guardar</button>
-</p>
-<app-listado-clientes></app-listado-clientes>
+<div class="formulario">
+    <form class="form">
+        <h2 class="form_title">Ingresa los descuentos</h2>
+        <div class="form_container">
+            <div class="form_group">
+                <input type="text" id="name" class="form_input" placeholder=" " [(ngModel)]="cliente.nombre" [ngModelOptions]="{standalone: true}">
+                <label for="name" class="form_label">Nombre del producto:</label>
+                <span class="form_line"></span>
+            </div>
+            <div class="form_group">
+                <input type="text" id="idProducto" class="form_input" placeholder=" " [(ngModel)]="cliente.cif" [ngModelOptions]="{standalone: true}">
+                <label for="idProducto" class="form_label">Id del producto:</label>
+                <span class="form_line"></span>
+            </div>
+            <div class="form_group">
+                <input type="text" id="precio" class="form_input" placeholder=" " [(ngModel)]="cliente.direccion" [ngModelOptions]="{standalone: true}">
+                <label for="precio" class="form_label">Precio del producto:</label>
+                <span class="form_line"></span>
+            </div>
+            <div class="form_group">
+                <select name="descuento" id="descuento" class="form_input" [(ngModel)]="cliente.grupo" [ngModelOptions]="{standalone: true}">
+                    <option *ngFor="let grupo of grupos" value="{{ grupo.id }}">{{ grupo.nombre }}</option>
+                </select>
+                <label for="descuento" class="form_label">Descuento del producto:</label>
+                <span class="form_line"></span>
+            </div>
+            <button type="submit" class="form_submit" value="Crear" (click)="this.nuevoCliente()">Guardar</button>
+        </div>
+    </form>
+    </div>

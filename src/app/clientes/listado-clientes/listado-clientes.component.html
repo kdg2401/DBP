@@ -1,12 +1,32 @@
 <h2>
-    Listado Productos
+    Listado Descuentos:
 </h2>
-<div *ngIf="! productoss.length">No hay productos el momento</div>
-<div>
-    <article *ngFor="let productoo of productoss">
-        <span>{{productoo.nombre}}</span>
-        <span>{{productoo.marca}}</span>
-        <span>{{productoo.codigo}}</span>
-        <span>{{productoo.categoria}}</span>
-    </article>
+<div class="containerListado">
+    <br>
+    <br>
+    <div *ngIf="! clientes.length">No hay descuentos que mostrar</div>
+    <br>
+    <div *ngIf=" clientes.length" class="container">
+    
+        <table class="default">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Id producto</th>
+                    <th>Preci original</th>
+                    <th>Cantidad Descuento</th>
+                    <th>Precio final</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cliente of clientes">
+                    <td>{{cliente.nombre}}</td>
+                    <td>{{cliente.cif}}</td>
+                    <td>{{cliente.direccion}}</td>
+                    <td>{{cliente.direccion*cliente.grupo}}</td>
+                    <td>{{cliente.direccion - (cliente.direccion*cliente.grupo)}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

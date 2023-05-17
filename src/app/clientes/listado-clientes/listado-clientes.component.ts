@@ -1,4 +1,4 @@
-import { Producto, Grupo} from './../cliente.model'
+import { Cliente, Grupo} from './../cliente.model'
 import { ClientesService } from '../clientes.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listado-clientes.component.css']
 })
 export class ListadoClientesComponent implements OnInit{
-  productoss: Producto[];
+  clientes: Cliente[];
   constructor(private clientesService: ClientesService){}
   ngOnInit(){
-    this.productoss = this.clientesService.getClientes();
+    this.clientes = this.clientesService.getClientes();
   }
   
 }
