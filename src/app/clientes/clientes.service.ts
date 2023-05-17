@@ -14,16 +14,12 @@ export class ClientesService{
       },
       {
         id: 1,
-        nombre: 'Activos'
+        nombre: 'Rostro'
       },
       {
         id: 2,
-        nombre: 'Inactivos'
-      },
-      {
-        id:3,
-        nombre: 'Deudores'
-      },
+        nombre: 'Ojos'
+      }
     ];
     this.clientes = []
   }

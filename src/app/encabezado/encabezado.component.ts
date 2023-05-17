@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { AgregarProductosService } from '../agregar-productos.service';
 
 @Component({
   selector: 'app-encabezado',
@@ -7,13 +8,19 @@ import { Component, Input } from '@angular/core';
 })
 export class EncabezadoComponent {
 
+  constructor(private agregarProductosService: AgregarProductosService){}
+
   @Input() NCompras:Number;
 
-  numeroCompras:any = 0
+  contador:any = 0
 
   busqueda:String = "";
 
-    agregarArticuloCarro(){
-      this.numeroCompras = this.numeroCompras + 1;
+    ngOnInit(){
+      this.agregarProductosService.contador.subscribe(
+        contador =>{
+          this.contador = contador;
+        }
+      )
     }
 }

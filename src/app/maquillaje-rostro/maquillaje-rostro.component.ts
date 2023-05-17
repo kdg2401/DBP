@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Producto } from './maquillaje-rostro.model';
+import { AgregarProductosService } from '../agregar-productos.service';
 
 @Component({
   selector: 'app-maquillaje-rostro',
@@ -7,6 +8,21 @@ import { Producto } from './maquillaje-rostro.model';
   styleUrls: ['./maquillaje-rostro.component.css']
 })
 export class MaquillajeRostroComponent {
+
+  contador: number = 0;
+
+  constructor(private agregarProductosService: AgregarProductosService){}
+
+  agregarDatos(add: boolean) {
+    if(add){
+      this.contador ++;
+    }
+    else {
+      this.contador --;
+    }
+
+    this.agregarProductosService.contador.emit(this.contador);
+  }
 
   productos: Producto[] = [
     new Producto("Pestañina","97456","Max Factor",25900),
