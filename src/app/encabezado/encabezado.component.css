@@ -66,6 +66,9 @@ h1 {
 .car {
     border-radius: 50%;
     background-color: #FF3D67;
+    color: white;
+    padding-left: 4px;
+    padding-right: 4px;
 }
 
 .busquedasComunes {
@@ -73,4 +76,3 @@ h1 {
     font-weight: bold;
     text-decoration: dotted;
 }
-

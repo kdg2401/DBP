@@ -8,6 +8,10 @@ import { AgregarProductosService } from '../agregar-productos.service';
 })
 export class EncabezadoComponent {
 
+  valor_envio_gratis = 60000;
+
+  anuncio = 'envío gratis a nivel nacional por compras mayores a'
+
   constructor(private agregarProductosService: AgregarProductosService){}
 
   @Input() NCompras:Number;

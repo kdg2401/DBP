@@ -1,7 +1,7 @@
 <header class="py-2 mb-1 border-bottom">
   <div class="beauty-border position-relative mb-3 py-2 text-center font-weight-bolder">
-    ENVIO GRATIS A NIVEL NACIONAL POR COMPRAS MAYORES A $60.000
-  </div>
+    {{anuncio | uppercase}} {{valor_envio_gratis | currency:'$'}}
+    </div>
   <div class="container d-flex flex-row justify-content-around">
     <a [routerLink]="['/']" class="navbar-brand mt-0">
       <img src="assets/img/logo.png" alt="" width="70" height="70">
@@ -98,6 +98,9 @@
           <li><a class="dropdown-item" href="#">ESSENCE</a></li>
           <li><a class="dropdown-item" href="#">VOGUE</a></li>
         </ul>
+      </li>
+      <li class="nav-item2" routerLinkActive="active">
+        <a class="nav-link  link-light " [routerLink]="['/acerca-de']" data-bs-toggle="dropdown" aria-expanded="false">ACERCA DE</a>
       </li>
     </ul>
   </div>

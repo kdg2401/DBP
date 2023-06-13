@@ -15,6 +15,23 @@ import { InicioComponent } from './inicio/inicio.component';
 import { PaginaNoExisteComponent } from './pagina-no-existe/pagina-no-existe.component';
 import { ClientesModule } from "./clientes/clientes.module";
 import { MaquillajeRostroComponent } from './maquillaje-rostro/maquillaje-rostro.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
+
+
+import { InformacionModule } from './informacion/informacion.module';
+import { AcercaDeComponent } from './informacion/acerca-de/acerca-de.component';
+
+
+import { MatInputModule } from '@angular/material/input'
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatTableModule } from '@angular/material/table'
+
 
 const routes: Routes = [
   { path: 'cuerpo', component: CuerpoComponent },
@@ -22,6 +39,8 @@ const routes: Routes = [
   { path: 'inicio', component: InicioComponent},
   { path: 'maquillaje-rostro', component: MaquillajeRostroComponent},
   { path: 'pagina-no-existe', component: PaginaNoExisteComponent},
+  { path: 'pagina-no-existe', component: PaginaNoExisteComponent},
+  { path: 'acerca-de', component: AcercaDeComponent},
   { path: '', component: InicioComponent, pathMatch: 'full' },
   { path: '**', component: PaginaNoExisteComponent, pathMatch: 'full' }
 ];
@@ -35,7 +54,7 @@ const routes: Routes = [
         FormRegistroComponent,
         InicioComponent,
         PaginaNoExisteComponent,
-        MaquillajeRostroComponent
+        MaquillajeRostroComponent,
     ],
     providers: [],
     bootstrap: [AppComponent],
@@ -46,8 +65,19 @@ const routes: Routes = [
         RouterModule.forRoot(routes),
         FormsModule,
         ReactiveFormsModule,
-        ClientesModule
+        ClientesModule,
+        LayoutModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatSidenavModule,
+        MatIconModule,
+        MatListModule,
+        InformacionModule,
+        MatCardModule,
+        MatDialogModule,
+        MatTableModule,    
     ],
+    exports: [],
     schemas:[ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }

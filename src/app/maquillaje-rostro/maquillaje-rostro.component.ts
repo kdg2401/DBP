@@ -24,6 +24,7 @@ export class MaquillajeRostroComponent {
     this.agregarProductosService.contador.emit(this.contador);
   }
 
+
   productos: Producto[] = [
     new Producto("Pestañina","97456","Max Factor",25900),
     new Producto("Labial","78456","Vitú",11900),

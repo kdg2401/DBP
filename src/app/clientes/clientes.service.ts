@@ -13,15 +13,15 @@ export class ClientesService{
         nombre: '5%'
       },
       {
-<<<<<<< HEAD
         id: 1,
         nombre: 'Rostro'
       },
       {
         id: 2,
         nombre: 'Ojos'
-      }
-=======
+      },
+
+      {
         id: 0.10,
         nombre: '10%'
       },
@@ -33,7 +33,6 @@ export class ClientesService{
         id: 0.25,
         nombre: '25%'
       },
->>>>>>> 3d30d0ac7a2ec312b38f4bc5c130fc5f2c9cfc83
     ];
     this.clientes = []
   }
