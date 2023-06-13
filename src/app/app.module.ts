@@ -32,6 +32,7 @@ import { AcercaDeComponent } from './informacion/acerca-de/acerca-de.component';
 import { MatInputModule } from '@angular/material/input'
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
+import { ProductosComponent } from './clientes/productos/productos.component';
 
 
 const routes: Routes = [
@@ -41,8 +42,8 @@ const routes: Routes = [
   { path: 'maquillaje-rostro', component: MaquillajeRostroComponent},
   { path: 'cuidado-capilar', component: CuidadoCapilarComponent},
   { path: 'pagina-no-existe', component: PaginaNoExisteComponent},
-  { path: 'pagina-no-existe', component: PaginaNoExisteComponent},
   { path: 'acerca-de', component: AcercaDeComponent},
+  { path: 'productos', component: ProductosComponent},
   { path: '', component: InicioComponent, pathMatch: 'full' },
   { path: '**', component: PaginaNoExisteComponent, pathMatch: 'full' }
 ];

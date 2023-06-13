@@ -4,12 +4,14 @@ import { ClientesService } from './clientes.service';
 import { AltaClienteComponent } from './alta-cliente/alta-cliente.component';
 import { FormsModule } from '@angular/forms';
 import { ListadoClientesComponent } from './listado-clientes/listado-clientes.component';
+import { ProductosComponent } from './productos/productos.component';
 
 
 @NgModule({
   declarations: [
     AltaClienteComponent,
-    ListadoClientesComponent
+    ListadoClientesComponent,
+    ProductosComponent
   ],
   imports: [
     CommonModule,

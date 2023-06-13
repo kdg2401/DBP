@@ -13,15 +13,6 @@ export class ClientesService{
         nombre: '5%'
       },
       {
-        id: 1,
-        nombre: 'Rostro'
-      },
-      {
-        id: 2,
-        nombre: 'Ojos'
-      },
-
-      {
         id: 0.10,
         nombre: '10%'
       },
