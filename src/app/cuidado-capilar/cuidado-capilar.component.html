@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="column">
+        <mat-card class="example-card imagenes" *ngFor="let producto of productos; let i=index">
+            <mat-card-title>{{producto.nombre}}</mat-card-title>
+            <mat-card-subtitle>{{producto.marca}}</mat-card-subtitle>
+            <img src="assets/img/cuidadocapilar/{{i+1}}.png" class="imagenNuevo" height="200" width="200">
+            <mat-card-content>
+              <p>
+                Cod.{{producto.codigo}}
+              </p>
+              <p>
+                $ {{producto.precio}}
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button class="btn" (click)="agregarDatos(true)">Agregar</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

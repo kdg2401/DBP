@@ -15,6 +15,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { PaginaNoExisteComponent } from './pagina-no-existe/pagina-no-existe.component';
 import { ClientesModule } from "./clientes/clientes.module";
 import { MaquillajeRostroComponent } from './maquillaje-rostro/maquillaje-rostro.component';
+import { CuidadoCapilarComponent } from './cuidado-capilar/cuidado-capilar.component'
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -30,7 +31,7 @@ import { AcercaDeComponent } from './informacion/acerca-de/acerca-de.component';
 
 import { MatInputModule } from '@angular/material/input'
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatTableModule } from '@angular/material/table'
+import { MatTableModule } from '@angular/material/table';
 
 
 const routes: Routes = [
@@ -38,6 +39,7 @@ const routes: Routes = [
   { path: 'form-registro', component: FormRegistroComponent },
   { path: 'inicio', component: InicioComponent},
   { path: 'maquillaje-rostro', component: MaquillajeRostroComponent},
+  { path: 'cuidado-capilar', component: CuidadoCapilarComponent},
   { path: 'pagina-no-existe', component: PaginaNoExisteComponent},
   { path: 'pagina-no-existe', component: PaginaNoExisteComponent},
   { path: 'acerca-de', component: AcercaDeComponent},
@@ -55,6 +57,7 @@ const routes: Routes = [
         InicioComponent,
         PaginaNoExisteComponent,
         MaquillajeRostroComponent,
+        CuidadoCapilarComponent,
     ],
     providers: [],
     bootstrap: [AppComponent],
@@ -76,6 +79,7 @@ const routes: Routes = [
         MatCardModule,
         MatDialogModule,
         MatTableModule,    
+        MatInputModule
     ],
     exports: [],
     schemas:[ CUSTOM_ELEMENTS_SCHEMA ]

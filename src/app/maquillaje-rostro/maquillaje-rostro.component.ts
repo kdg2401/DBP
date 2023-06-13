@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Producto } from './maquillaje-rostro.model';
+import { Producto } from '../maquillaje-rostro.model';
 import { AgregarProductosService } from '../agregar-productos.service';
 
 @Component({
